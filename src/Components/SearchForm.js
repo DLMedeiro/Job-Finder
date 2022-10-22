@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardBody,
@@ -8,8 +8,26 @@ import {
   FormGroup,
   Form,
 } from "reactstrap";
+import JoblyApi from "../api.js";
 
-function Profile() {
+function SearchFrom({ searchFunction }) {
+  const [search, setSearch] = useState("");
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setSearch(value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    searchFunction(search);
+    // searchFunction(search);
+  };
+
+  // const test = () => {
+  //   console.log("this is a test");
+  // };
+
   return (
     <section className="col-md-8">
       <Card>
@@ -22,9 +40,11 @@ function Profile() {
                 type="text"
                 name="search"
                 placeholder="Enter search term"
+                value={search}
+                onChange={handleChange}
               />
             </FormGroup>
-            <Button>Submit</Button>
+            <Button onClick={onSubmit}>Submit</Button>
           </Form>
         </CardBody>
       </Card>
@@ -32,4 +52,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default SearchFrom;

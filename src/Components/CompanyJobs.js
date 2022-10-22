@@ -13,7 +13,7 @@ function Jobs() {
       let company = await JoblyApi.getCompany(handle);
       setCompany(company);
       setJobs(company.jobs);
-      console.log(company);
+      //   console.log(company);
     }
     getCompany(handle);
   }, []);
