@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Companies from "./Companies";
+import CompanyJobs from "./CompanyJobs";
 import Jobs from "./Jobs";
 import Profile from "./Profile";
 import LoginForm from "./LoginForm";
@@ -18,6 +19,9 @@ function Routes() {
         </Route>
         <Route exact path="/companies">
           <Companies />
+        </Route>
+        <Route exact path="/companies/:handle">
+          <CompanyJobs />
         </Route>
         <Route exact path="/jobs">
           <Jobs />

@@ -20,6 +20,7 @@ function Companies() {
       {companies.map((company) => (
         <CompanyCard
           key={company.handle}
+          handle={company.handle}
           title={company.name}
           logo={company.logoUrl}
           description={company.description}

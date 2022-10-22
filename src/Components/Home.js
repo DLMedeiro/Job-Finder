@@ -4,10 +4,10 @@ import JoblyApi from "../api.js";
 function Home() {
   // Need to know if logged in
 
-  async function getAllJobs() {
-    let jobs = await JoblyApi.getAllJobs();
-    console.log(jobs);
-  }
+  // async function getCompany(handle) {
+  //   let company = await JoblyApi.getCompany(handle);
+  //   console.log(company);
+  // }
   return (
     <div>
       <div></div>
@@ -16,7 +16,7 @@ function Home() {
         <h1>Jobly</h1>
         <h4>All the jobs in one, convenient place.</h4>
         <button>Log in</button>
-        <button onClick={getAllJobs}>Sign Up</button>
+        <button>Sign Up</button>
       </div>
       <div>
         <p>Logged In</p>
