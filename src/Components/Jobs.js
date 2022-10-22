@@ -6,6 +6,11 @@ import JoblyApi from "../api.js";
 function Jobs() {
   const [jobs, setJobs] = useState([]);
 
+  async function searchFunction(search) {
+    let results = await JoblyApi.searchJobs(search);
+    setJobs(results);
+  }
+
   useEffect(() => {
     async function getAllJobs() {
       let jobs = await JoblyApi.getAllJobs();
@@ -17,8 +22,7 @@ function Jobs() {
   return (
     <div>
       <h1>This is the Jobs Page</h1>
-      <SearchForm />
-      {/* Map over Jobs and input data into job card */}
+      <SearchForm searchFunction={searchFunction} />
       {jobs.map((job) => (
         <JobCard
           key={job.id}

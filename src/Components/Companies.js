@@ -7,7 +7,7 @@ function Companies() {
   const [companies, setCompanies] = useState([]);
 
   async function searchFunction(search) {
-    let results = await JoblyApi.search("companies", search);
+    let results = await JoblyApi.searchCompanies(search);
     setCompanies(results);
   }
 

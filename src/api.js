@@ -47,9 +47,14 @@ class JoblyApi {
     return res.companies;
   }
   // Get searchable companies/jobs - (future update) pull 10 at a time?
-  static async search(criteria, test) {
-    let res = await this.request(`${criteria}/?name=${test}`);
-    return res[criteria];
+  static async searchCompanies(criteria) {
+    let res = await this.request(`companies/?name=${criteria}`);
+    return res.companies;
+  }
+  // Get searchable companies/jobs - (future update) pull 10 at a time?
+  static async searchJobs(criteria) {
+    let res = await this.request(`jobs/?title=${criteria}`);
+    return res.jobs;
   }
 
   // Get all jobs - (future update) pull 10 at a time?
