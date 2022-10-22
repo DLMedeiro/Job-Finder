@@ -5,7 +5,7 @@ import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 function CompanyCard({ title, description, logo }) {
   return (
     <section>
-      <Card>
+      <Card body outline>
         <CardBody>
           <img alt={logo}></img>
           <CardTitle className="font-weight-bold text-center">
