@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 
 function App() {
+  // Use context for logged in and pass down
   return (
     <div>
       <BrowserRouter>

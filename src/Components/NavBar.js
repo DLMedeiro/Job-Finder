@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
 
 function NavBar() {
+  // Need to know if logged in
   return (
     // Logged In
     <div>

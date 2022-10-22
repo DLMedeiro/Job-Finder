@@ -16,10 +16,15 @@ function Profile() {
         <CardBody className="text-center">
           <Form>
             <FormGroup>
-              <Label htmlFor="name">Item Name</Label>
-              <Input id="name" required="required" type="text" name="name" />
+              <Input
+                id="search"
+                required="required"
+                type="text"
+                name="search"
+                placeholder="Enter search term"
+              />
             </FormGroup>
-            <Button>Add Item</Button>
+            <Button>Submit</Button>
           </Form>
         </CardBody>
       </Card>
