@@ -5,9 +5,13 @@ import JoblyApi from "../api.js";
 
 function Companies() {
   const [companies, setCompanies] = useState([]);
+  const [error, setError] = useState(false);
 
   async function searchFunction(search) {
     let results = await JoblyApi.searchCompanies(search);
+    if (results.length === 0) {
+      setError(true);
+    }
     setCompanies(results);
   }
 
@@ -22,17 +26,21 @@ function Companies() {
     <div>
       <h1>This is the Companies Page</h1>
       <SearchForm searchFunction={searchFunction} />
-      <div>
-        {companies.map((company) => (
-          <CompanyCard
-            key={company.handle}
-            handle={company.handle}
-            title={company.name}
-            logo={company.logoUrl}
-            description={company.description}
-          />
-        ))}
-      </div>
+      {!error ? (
+        <div>
+          {companies.map((company) => (
+            <CompanyCard
+              key={company.handle}
+              handle={company.handle}
+              title={company.name}
+              logo={company.logoUrl}
+              description={company.description}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>Sorry, no results were found!</p>
+      )}
     </div>
   );
 }
