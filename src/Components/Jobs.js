@@ -6,6 +6,7 @@ import JoblyApi from "../api.js";
 function Jobs() {
   const [jobs, setJobs] = useState([]);
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function searchFunction(search) {
     let results = await JoblyApi.searchJobs(search);
@@ -13,15 +14,21 @@ function Jobs() {
       setError(true);
     }
     setJobs(results);
+    setIsLoading(false);
   }
 
   useEffect(() => {
     async function getAllJobs() {
       let jobs = await JoblyApi.getAllJobs();
       setJobs(jobs);
+      setIsLoading(false);
     }
     getAllJobs();
   }, []);
+
+  if (isLoading) {
+    return <p>Loading &hellip;</p>;
+  }
 
   return (
     <div>
