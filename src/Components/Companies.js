@@ -5,14 +5,11 @@ import JoblyApi from "../api.js";
 
 function Companies() {
   const [companies, setCompanies] = useState([]);
-  // const [searchResults, setSearchResults] = useState([]);
 
   async function searchFunction(search) {
     let results = await JoblyApi.search("companies", search);
     setCompanies(results);
-    // console.log(results);
   }
-  // console.log(searchResults);
 
   useEffect(() => {
     async function getAllCompanies() {

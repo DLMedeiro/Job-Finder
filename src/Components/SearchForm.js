@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardBody,
@@ -8,7 +8,6 @@ import {
   FormGroup,
   Form,
 } from "reactstrap";
-import JoblyApi from "../api.js";
 
 function SearchFrom({ searchFunction }) {
   const [search, setSearch] = useState("");
@@ -21,12 +20,7 @@ function SearchFrom({ searchFunction }) {
   const onSubmit = (e) => {
     e.preventDefault();
     searchFunction(search);
-    // searchFunction(search);
   };
-
-  // const test = () => {
-  //   console.log("this is a test");
-  // };
 
   return (
     <section className="col-md-8">
