@@ -13,6 +13,7 @@ function App() {
     localStorage.setItem("item", JSON.stringify(user));
     setCurrentUser(JSON.parse(localStorage.getItem("item")));
   }
+  console.log(currentUser);
   async function login(data, username) {
     let token = await JoblyApi.login(data);
     if (token) {
