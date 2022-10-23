@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
 
-function NavBar({ currentUser }) {
+function NavBar({ currentUser, logout }) {
   return (
     // Logged In
     <div>
@@ -30,7 +30,9 @@ function NavBar({ currentUser }) {
             </Nav>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink to="/">Log out {currentUser}</NavLink>
+                <NavLink to="/" onClick={logout}>
+                  Log out {currentUser}
+                </NavLink>
               </NavItem>
             </Nav>
           </Navbar>
