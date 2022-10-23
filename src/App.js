@@ -10,8 +10,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   async function loginData(username) {
     let user = await JoblyApi.loggedInUser(username);
-    setCurrentUser(user);
-    console.log(user.username);
+    localStorage.setItem("item", JSON.stringify(user));
+    setCurrentUser(JSON.parse(localStorage.getItem("item")));
   }
   async function login(data, username) {
     let token = await JoblyApi.login(data);
@@ -24,7 +24,7 @@ function App() {
     <div>
       <BrowserRouter>
         <NavBar currentUser={currentUser.firstName} />
-        <Routes login={login} currentUser={currentUser} />
+        <Routes login={login} currentUser={currentUser.firstName} />
       </BrowserRouter>
     </div>
   );
