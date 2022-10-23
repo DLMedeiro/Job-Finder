@@ -10,6 +10,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   async function loginData(username) {
     let user = await JoblyApi.loggedInUser(username);
+    // setCurrentUser(user);
     localStorage.setItem("item", JSON.stringify(user));
     setCurrentUser(JSON.parse(localStorage.getItem("item")));
   }
@@ -20,12 +21,13 @@ function App() {
       loginData(username);
     }
   }
+  console.log(currentUser);
   // Use context for logged in and pass down
   return (
     <div>
       <BrowserRouter>
         <NavBar currentUser={currentUser.firstName} />
-        <Routes login={login} currentUser={currentUser.firstName} />
+        <Routes login={login} currentUser={currentUser} />
       </BrowserRouter>
     </div>
   );

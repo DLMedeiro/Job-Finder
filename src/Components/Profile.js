@@ -9,7 +9,22 @@ import {
   Form,
 } from "reactstrap";
 
-function Profile() {
+function Profile({ currentUser }) {
+  const [formData, setFormData] = useState(currentUser);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    // login(userLogin, userLogin.username);
+  };
   return (
     <section className="col-md-8">
       <Card>
@@ -22,6 +37,8 @@ function Profile() {
                 required="required"
                 type="text"
                 name="username"
+                value={currentUser.username}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
@@ -31,6 +48,8 @@ function Profile() {
                 required="required"
                 type="text"
                 name="firstName"
+                value={currentUser.firstName}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
@@ -40,11 +59,20 @@ function Profile() {
                 required="required"
                 type="text"
                 name="lastName"
+                value={currentUser.lastName}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="email">Email</Label>
-              <Input id="email" required="required" type="text" name="email" />
+              <Input
+                id="email"
+                required="required"
+                type="text"
+                name="email"
+                value={currentUser.email}
+                onChange={handleChange}
+              />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="confirm">Confirm Password</Label>
@@ -53,9 +81,11 @@ function Profile() {
                 required="required"
                 type="text"
                 name="confirm"
+                // value={userLogin.username}
+                // onChange={handleChange}
               />
             </FormGroup>
-            <Button>Add Item</Button>
+            <Button onClick={onSubmit}>Add Item</Button>
           </Form>
         </CardBody>
       </Card>

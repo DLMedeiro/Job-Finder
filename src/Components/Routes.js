@@ -14,36 +14,26 @@ function Routes({ login, currentUser }) {
     <>
       <Switch>
         <Route exact path="/">
-          <Home currentUser={currentUser} />
+          <Home currentUser={currentUser.firstName} />
         </Route>
-        {currentUser ? (
-          <>
-            <Route exact path="/login">
-              <Redirect to="/companies" />
-            </Route>
-            <Route exact path="/companies">
-              <Companies />
-            </Route>
-            <Route exact path="/companies/:handle">
-              <CompanyJobs />
-            </Route>
-            <Route exact path="/jobs">
-              <Jobs />
-            </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-          </>
-        ) : (
-          <>
-            <Route exact path="/login">
-              <LoginForm login={login} currentUser={currentUser} />
-            </Route>
-            <Route exact path="/signup">
-              <SignupForm />
-            </Route>
-          </>
-        )}
+        <Route exact path="/companies">
+          <Companies />
+        </Route>
+        <Route exact path="/companies/:handle">
+          <CompanyJobs />
+        </Route>
+        <Route exact path="/jobs">
+          <Jobs />
+        </Route>
+        <Route exact path="/profile">
+          <Profile currentUser={currentUser} />
+        </Route>
+        <Route exact path="/login">
+          <LoginForm login={login} currentUser={currentUser} />
+        </Route>
+        <Route exact path="/signup">
+          <SignupForm />
+        </Route>
       </Switch>
     </>
   );
