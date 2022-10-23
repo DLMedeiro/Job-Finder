@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardBody,
@@ -9,7 +9,28 @@ import {
   Form,
 } from "reactstrap";
 
-function LoginForm() {
+function LoginForm({ login }) {
+  const INITIAL_STATE = {
+    username: "",
+    password: "",
+  };
+  const [userLogin, setUserLogin] = useState(INITIAL_STATE);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserLogin((userLogin) => ({
+      ...userLogin,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    login(userLogin, userLogin.username);
+
+    setUserLogin(INITIAL_STATE);
+  };
+
   return (
     <section className="col-md-8">
       <Card>
@@ -22,6 +43,8 @@ function LoginForm() {
                 required="required"
                 type="text"
                 name="username"
+                value={userLogin.username}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
@@ -31,9 +54,11 @@ function LoginForm() {
                 required="required"
                 type="text"
                 name="password"
+                value={userLogin.password}
+                onChange={handleChange}
               />
             </FormGroup>
-            <Button>Add Item</Button>
+            <Button onClick={onSubmit}>Add Item</Button>
           </Form>
         </CardBody>
       </Card>

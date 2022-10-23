@@ -8,7 +8,7 @@ import Profile from "./Profile";
 import LoginForm from "./LoginForm";
 import SignupForm from "../SignupForm";
 
-function Routes() {
+function Routes({ login }) {
   // Need to know if logged in
   return (
     <>
@@ -31,7 +31,7 @@ function Routes() {
         </Route>
         {/* Not logged in */}
         <Route exact path="/login">
-          <LoginForm />
+          <LoginForm login={login} />
         </Route>
         <Route exact path="/signup">
           <SignupForm />
