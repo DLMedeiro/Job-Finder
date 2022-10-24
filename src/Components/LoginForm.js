@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
+import UserContext from "./UserContext";
 
 import {
   Card,
@@ -11,7 +12,8 @@ import {
   Form,
 } from "reactstrap";
 
-function LoginForm({ login, currentUser }) {
+function LoginForm({ login }) {
+  const user = useContext(UserContext);
   const INITIAL_STATE = {
     username: "",
     password: "",
@@ -26,8 +28,6 @@ function LoginForm({ login, currentUser }) {
     }));
   };
 
-  console.log(currentUser);
-
   const onSubmit = (e) => {
     e.preventDefault();
     login(userLogin, userLogin.username);
@@ -36,7 +36,7 @@ function LoginForm({ login, currentUser }) {
 
   return (
     <>
-      {currentUser.username ? (
+      {user.username ? (
         <>
           <Redirect to="/companies" />
         </>

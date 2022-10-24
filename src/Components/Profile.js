@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import UserContext from "./UserContext";
 import {
   Card,
   CardBody,
@@ -9,8 +10,9 @@ import {
   Form,
 } from "reactstrap";
 
-function Profile({ currentUser }) {
-  const [formData, setFormData] = useState(currentUser);
+function Profile() {
+  const user = useContext(UserContext);
+  const [formData, setFormData] = useState(user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +39,7 @@ function Profile({ currentUser }) {
                 required="required"
                 type="text"
                 name="username"
-                value={currentUser.username}
+                value={user.username}
                 onChange={handleChange}
               />
             </FormGroup>
@@ -48,7 +50,7 @@ function Profile({ currentUser }) {
                 required="required"
                 type="text"
                 name="firstName"
-                value={currentUser.firstName}
+                value={user.firstName}
                 onChange={handleChange}
               />
             </FormGroup>
@@ -59,7 +61,7 @@ function Profile({ currentUser }) {
                 required="required"
                 type="text"
                 name="lastName"
-                value={currentUser.lastName}
+                value={user.lastName}
                 onChange={handleChange}
               />
             </FormGroup>
@@ -70,7 +72,7 @@ function Profile({ currentUser }) {
                 required="required"
                 type="text"
                 name="email"
-                value={currentUser.email}
+                value={user.email}
                 onChange={handleChange}
               />
             </FormGroup>

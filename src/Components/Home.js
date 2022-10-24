@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "./UserContext";
 
-function Home({ currentUser }) {
+function Home() {
+  const user = useContext(UserContext);
   return (
     <div>
       <div>
         <h1>Jobly</h1>
         <h4>All the jobs in one, convenient place.</h4>
       </div>
-      {currentUser ? (
+      {user.username ? (
         <div>
-          <h2>Welcome Back {currentUser}</h2>
+          <h2>Welcome Back {user.username}</h2>
         </div>
       ) : (
         <div>

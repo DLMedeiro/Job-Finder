@@ -8,13 +8,13 @@ import Profile from "./Profile";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
-function Routes({ login, currentUser, registerNewUser }) {
+function Routes({ login, registerNewUser }) {
   // Need to know if logged in
   return (
     <>
       <Switch>
         <Route exact path="/">
-          <Home currentUser={currentUser.firstName} />
+          <Home />
         </Route>
         <Route exact path="/companies">
           <Companies />
@@ -26,10 +26,10 @@ function Routes({ login, currentUser, registerNewUser }) {
           <Jobs />
         </Route>
         <Route exact path="/profile">
-          <Profile currentUser={currentUser} />
+          <Profile />
         </Route>
         <Route exact path="/login">
-          <LoginForm login={login} currentUser={currentUser} />
+          <LoginForm login={login} />
         </Route>
         <Route exact path="/signup">
           <SignupForm registerNewUser={registerNewUser} />

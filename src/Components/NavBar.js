@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 // import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
+import UserContext from "./UserContext";
 
-function NavBar({ currentUser, logout }) {
+function NavBar({ logout }) {
+  const user = useContext(UserContext);
   return (
     // Logged In
     <div>
-      {currentUser ? (
+      {user.username ? (
         <div>
           <Navbar expand="md">
             <NavLink exact to="/" className="navbar-brand">
@@ -31,7 +33,7 @@ function NavBar({ currentUser, logout }) {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink to="/" onClick={logout}>
-                  Log out {currentUser}
+                  Log out {user.username}
                 </NavLink>
               </NavItem>
             </Nav>

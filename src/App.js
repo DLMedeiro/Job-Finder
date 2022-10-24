@@ -4,10 +4,10 @@ import Routes from "./Components/Routes";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import JoblyApi from "./api.js";
+import UserContext from "./Components/UserContext";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
-  const [currentUserData, setCurrentUserData] = useState({});
   // const [token, setToken] = useState({});
 
   async function login(data, username) {
@@ -16,7 +16,6 @@ function App() {
       // setToken(token);
       console.log(username);
       let user = await JoblyApi.loggedInUser(username);
-      // setCurrentUser(user);
       localStorage.setItem("item", JSON.stringify(user));
       setCurrentUser(JSON.parse(localStorage.getItem("item")));
     }
@@ -34,30 +33,25 @@ function App() {
   }
 
   async function registerNewUser(data) {
-    console.log(data);
     let newUserToken = await JoblyApi.registerUser(data);
-    // login(data, data.username);
     if (newUserToken) {
       let newUser = {
         username: data.username,
         password: data.password,
       };
       login(newUser, data.username);
-      // console.log(newUser);
     }
   }
 
   // Use context for logged in and pass down
   return (
     <div>
-      <BrowserRouter>
-        <NavBar logout={logout} currentUser={currentUser.firstName} />
-        <Routes
-          login={login}
-          currentUser={currentUser}
-          registerNewUser={registerNewUser}
-        />
-      </BrowserRouter>
+      <UserContext.Provider value={currentUser}>
+        <BrowserRouter>
+          <NavBar logout={logout} />
+          <Routes login={login} registerNewUser={registerNewUser} />
+        </BrowserRouter>
+      </UserContext.Provider>
     </div>
   );
 }
