@@ -8,18 +8,22 @@ import UserContext from "./Components/UserContext";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
-  // const [token, setToken] = useState({});
+  const [token, setToken] = useState({});
 
   async function login(data, username) {
     let token = await JoblyApi.login(data);
     if (token) {
-      // setToken(token);
-      console.log(username);
       let user = await JoblyApi.loggedInUser(username);
+      setToken(token);
       localStorage.setItem("item", JSON.stringify(user));
-      setCurrentUser(JSON.parse(localStorage.getItem("item")));
     }
   }
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("item"))) {
+      setCurrentUser(JSON.parse(localStorage.getItem("item")));
+    }
+  }, [token]);
 
   // useEffect(async function userData(username) {
   //   let user = await JoblyApi.loggedInUser(username);
