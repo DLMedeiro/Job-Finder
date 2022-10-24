@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Routes from "./Components/Routes";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Redirect } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import JoblyApi from "./api.js";
 import UserContext from "./Components/UserContext";
@@ -24,12 +24,6 @@ function App() {
       setCurrentUser(JSON.parse(localStorage.getItem("item")));
     }
   }, [token]);
-
-  // useEffect(async function userData(username) {
-  //   let user = await JoblyApi.loggedInUser(username);
-  //   setCurrentUserData(user);
-  // }),
-  //   [currentUser];
 
   async function logout() {
     localStorage.clear();

@@ -41,6 +41,9 @@ function NavBar({ logout }) {
         </div>
       ) : (
         <div>
+          <NavLink exact to="/" className="navbar-brand">
+            Jobly
+          </NavLink>
           <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink to="/Login">Login</NavLink>
