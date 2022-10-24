@@ -39,13 +39,20 @@ class JoblyApi {
     let res = await this.request(`auth/token`, loginData, "post");
     // loginData = object including username and password
     // Why is post included?
-    return res.token;
+    JoblyApi.token = res.token;
+    return JoblyApi.token;
   }
 
   // Pull user information after login
   static async loggedInUser(username) {
     let res = await this.request(`users/${username}`);
     return res.user;
+  }
+
+  // Create a new user
+  static async registerUser(newUserData) {
+    let res = await this.request(`auth/register`, newUserData, "post");
+    return res.token;
   }
 
   /** Get details on a company by handle. */
@@ -79,9 +86,9 @@ class JoblyApi {
 }
 
 // for now, put token ("testuser" / "password" on class)
-JoblyApi.token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
-  "SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0." +
-  "FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc";
+// JoblyApi.token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZ" +
+//   "SI6InRlc3R1c2VyIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTU5ODE1OTI1OX0." +
+//   "FtrMwBQwe6Ue-glIFgz_Nf8XxRT2YecFCiSpYL0fCXc";
 
 export default JoblyApi;

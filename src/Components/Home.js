@@ -6,7 +6,6 @@ function Home({ currentUser }) {
       <div>
         <h1>Jobly</h1>
         <h4>All the jobs in one, convenient place.</h4>
-        <p>this is the: {currentUser}</p>
       </div>
       {currentUser ? (
         <div>

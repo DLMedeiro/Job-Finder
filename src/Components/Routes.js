@@ -6,9 +6,9 @@ import CompanyJobs from "./CompanyJobs";
 import Jobs from "./Jobs";
 import Profile from "./Profile";
 import LoginForm from "./LoginForm";
-import SignupForm from "../SignupForm";
+import SignupForm from "./SignupForm";
 
-function Routes({ login, currentUser }) {
+function Routes({ login, currentUser, registerNewUser }) {
   // Need to know if logged in
   return (
     <>
@@ -32,7 +32,7 @@ function Routes({ login, currentUser }) {
           <LoginForm login={login} currentUser={currentUser} />
         </Route>
         <Route exact path="/signup">
-          <SignupForm />
+          <SignupForm registerNewUser={registerNewUser} />
         </Route>
       </Switch>
     </>

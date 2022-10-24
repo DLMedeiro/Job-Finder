@@ -9,7 +9,30 @@ import {
   Form,
 } from "reactstrap";
 
-function SignupForm() {
+function SignupForm({ registerNewUser }) {
+  const INITIAL_STATE = {
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  };
+  const [formData, setFormData] = useState(INITIAL_STATE);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    // console.log(formData);
+    registerNewUser(formData);
+    // setFormData(INITIAL_STATE);
+  };
   return (
     <section className="col-md-8">
       <Card>
@@ -22,15 +45,19 @@ function SignupForm() {
                 required="required"
                 type="text"
                 name="username"
+                value={formData.username}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
-              <Label htmlFor="confirm">Password</Label>
+              <Label htmlFor="password">Password</Label>
               <Input
-                id="confirm"
+                id="password"
                 required="required"
-                type="text"
-                name="confirm"
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
@@ -40,6 +67,8 @@ function SignupForm() {
                 required="required"
                 type="text"
                 name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
@@ -49,14 +78,23 @@ function SignupForm() {
                 required="required"
                 type="text"
                 name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
               />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="email">Email</Label>
-              <Input id="email" required="required" type="text" name="email" />
+              <Input
+                id="email"
+                required="required"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
             </FormGroup>
 
-            <Button>Add Item</Button>
+            <Button onClick={onSubmit}>Add Item</Button>
           </Form>
         </CardBody>
       </Card>
