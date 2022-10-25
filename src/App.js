@@ -10,18 +10,20 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [token, setToken] = useState({});
 
+  // Login function
   async function login(data, username) {
-    let token = await JoblyApi.login(data);
-    if (token) {
+    let res = await JoblyApi.loginUser(data);
+    if (res) {
       let user = await JoblyApi.loggedInUser(username);
-      setToken(token);
-      localStorage.setItem("item", JSON.stringify(user));
+      setToken(res);
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("token", JSON.stringify(res));
     }
   }
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("item"))) {
-      setCurrentUser(JSON.parse(localStorage.getItem("item")));
+    if (JSON.parse(localStorage.getItem("user"))) {
+      setCurrentUser(JSON.parse(localStorage.getItem("user")));
     }
   }, [token]);
 
@@ -41,13 +43,47 @@ function App() {
     }
   }
 
-  // Use context for logged in and pass down
+  // Update user information
+  async function update(userData) {
+    let userCheck = {
+      username: currentUser.username,
+      password: userData.password,
+    };
+    let testToken = await JoblyApi.loginUser(userCheck);
+    if (!testToken) {
+      console.log("incorrect password provided");
+    } else {
+      let updatedInfo = {
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        email: userData.email,
+      };
+      await JoblyApi.updateUser(currentUser.username, updatedInfo);
+      setCurrentUser({});
+      login(userCheck, currentUser.username);
+    }
+  }
+
+  async function apply(id, username) {
+    // if
+    let confirmation = await JoblyApi.applyJob(username, id);
+    let user = await JoblyApi.loggedInUser(username);
+    localStorage.setItem("user", JSON.stringify(user));
+    setCurrentUser(JSON.parse(localStorage.getItem("user")));
+    console.log(confirmation);
+  }
+
   return (
     <div>
       <UserContext.Provider value={currentUser}>
         <BrowserRouter>
           <NavBar logout={logout} />
-          <Routes login={login} registerNewUser={registerNewUser} />
+          <Routes
+            login={login}
+            registerNewUser={registerNewUser}
+            update={update}
+            apply={apply}
+          />
         </BrowserRouter>
       </UserContext.Provider>
     </div>

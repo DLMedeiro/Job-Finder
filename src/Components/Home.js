@@ -11,7 +11,7 @@ function Home() {
       </div>
       {user.username ? (
         <div>
-          <h2>Welcome Back {user.username}</h2>
+          <h2>Welcome Back {user.firstName}</h2>
         </div>
       ) : (
         <div>

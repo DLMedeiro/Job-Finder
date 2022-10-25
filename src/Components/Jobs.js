@@ -3,7 +3,7 @@ import SearchForm from "./SearchForm";
 import JobCard from "./JobCard";
 import JoblyApi from "../api.js";
 
-function Jobs() {
+function Jobs({ apply }) {
   const [jobs, setJobs] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -39,10 +39,12 @@ function Jobs() {
           {jobs.map((job) => (
             <JobCard
               key={job.id}
+              id={job.id}
               title={job.title}
               companyName={job.companyName}
               salary={job.salary}
               equity={job.equity}
+              apply={apply}
             />
           ))}
         </div>

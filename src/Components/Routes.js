@@ -9,7 +9,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import UserContext from "./UserContext";
 
-function Routes({ login, registerNewUser }) {
+function Routes({ login, registerNewUser, update, apply }) {
   const user = useContext(UserContext);
 
   return (
@@ -23,13 +23,13 @@ function Routes({ login, registerNewUser }) {
             <Companies />
           </Route>
           <Route exact path="/companies/:handle">
-            <CompanyJobs />
+            <CompanyJobs apply={apply} />
           </Route>
           <Route exact path="/jobs">
-            <Jobs />
+            <Jobs apply={apply} />
           </Route>
           <Route exact path="/profile">
-            <Profile />
+            <Profile login={login} update={update} />
           </Route>
           <Route exact path="/login">
             <LoginForm login={login} />

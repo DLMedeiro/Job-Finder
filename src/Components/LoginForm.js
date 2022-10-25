@@ -68,7 +68,7 @@ function LoginForm({ login }) {
                       onChange={handleChange}
                     />
                   </FormGroup>
-                  <Button onClick={onSubmit}>Add Item</Button>
+                  <Button onClick={onSubmit}>Log In</Button>
                 </Form>
               </CardBody>
             </Card>

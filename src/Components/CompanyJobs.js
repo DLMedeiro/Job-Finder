@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import JobCard from "./JobCard";
 import JoblyApi from "../api.js";
 
-function Jobs() {
+function Jobs({ apply }) {
   const { handle } = useParams();
   const [company, setCompany] = useState([]);
   const [jobs, setJobs] = useState([]);
@@ -13,7 +13,6 @@ function Jobs() {
       let company = await JoblyApi.getCompany(handle);
       setCompany(company);
       setJobs(company.jobs);
-      //   console.log(company);
     }
     getCompany(handle);
   }, []);
@@ -26,10 +25,12 @@ function Jobs() {
       {jobs.map((job) => (
         <JobCard
           key={job.id}
+          id={job.id}
           title={job.title}
           companyName={job.companyName}
           salary={job.salary}
           equity={job.equity}
+          apply={apply}
         />
       ))}
     </div>

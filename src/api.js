@@ -35,10 +35,9 @@ class JoblyApi {
   // Individual API routes
 
   // log in a user
-  static async login(loginData) {
+  static async loginUser(loginData) {
     let res = await this.request(`auth/token`, loginData, "post");
     // loginData = object including username and password
-    // Why is post included?
     JoblyApi.token = res.token;
     return JoblyApi.token;
   }
@@ -53,6 +52,12 @@ class JoblyApi {
   static async registerUser(newUserData) {
     let res = await this.request(`auth/register`, newUserData, "post");
     return res.token;
+  }
+
+  // Update user
+  static async updateUser(username, updatedData) {
+    let res = await this.request(`users/${username}`, updatedData, "patch");
+    return res;
   }
 
   /** Get details on a company by handle. */
@@ -82,6 +87,18 @@ class JoblyApi {
   static async getAllJobs() {
     let res = await this.request(`jobs/`);
     return res.jobs;
+  }
+
+  // Apply for a job
+  static async applyJob(username, id) {
+    let res = await this.request(`users/${username}/jobs/${id}`, {}, "post");
+    if (res) {
+      console.log(res);
+    } else {
+      console.log("already applied");
+    }
+    // Why add empty object?
+    // return res;
   }
 }
 
