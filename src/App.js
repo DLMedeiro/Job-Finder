@@ -6,9 +6,12 @@ import NavBar from "./Components/NavBar";
 import JoblyApi from "./api.js";
 import UserContext from "./Components/UserContext";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [token, setToken] = useState({});
+  const [error, setError] = useState("");
 
   // Login function
   async function login(data, username) {
@@ -18,6 +21,9 @@ function App() {
       setToken(res);
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("token", JSON.stringify(res));
+    } else {
+      setError("Incorrect name or password");
+      console.log(error);
     }
   }
 
@@ -83,6 +89,7 @@ function App() {
             registerNewUser={registerNewUser}
             update={update}
             apply={apply}
+            error={error}
           />
         </BrowserRouter>
       </UserContext.Provider>

@@ -32,14 +32,21 @@ function Profile({ update }) {
     update(formData);
   };
   return (
-    <section className="col-md-8">
+    <section>
       <h1>{user.firstName}'s Profile</h1>
       <Card>
-        <CardBody className="text-center">
+        <CardBody>
           <Form>
             <FormGroup>
               <Label htmlFor="username">Username</Label>
-              <p className="form-control-plaintext">{user.username}</p>
+              <Input
+                disabled
+                id="username"
+                required="required"
+                type="text"
+                name="username"
+                value={user.username}
+              />
             </FormGroup>
             <FormGroup>
               <Label htmlFor="firstName">First Name</Label>

@@ -6,17 +6,18 @@ import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 function CompanyCard({ title, description, logo, handle }) {
   return (
     <section>
-      <Link to={`/companies/${handle}`}>
-        <Card body outline>
-          <CardBody>
-            <img alt={logo}></img>
-            <CardTitle className="font-weight-bold text-center">
-              {title}
-            </CardTitle>
-            <CardText className="font-italic">{description}</CardText>
-          </CardBody>
-        </Card>
-      </Link>
+      <Card body outline>
+        <CardBody>
+          {/* <img src={logo} alt={logo}></img> */}
+          <CardTitle tag="h5" className="font-weight-bold text-center">
+            {title}
+          </CardTitle>
+          <CardText className="font-italic">{description}</CardText>
+          <Link to={`/companies/${handle}`}>
+            <button type="button">Learn More</button>
+          </Link>
+        </CardBody>
+      </Card>
     </section>
   );
 }

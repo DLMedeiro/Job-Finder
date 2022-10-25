@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-// import "./NavBar.css";
+import "../NavBar.css";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "reactstrap";
 import UserContext from "./UserContext";
@@ -12,7 +12,12 @@ function NavBar({ logout }) {
       {user.username ? (
         <div>
           <Navbar expand="md">
-            <NavLink exact to="/" className="navbar-brand">
+            <NavLink
+              exact
+              to="/"
+              className="navbar-brand"
+              style={{ color: "white" }}
+            >
               Jobly
             </NavLink>
             <Nav className="ml-auto" navbar>
@@ -41,41 +46,29 @@ function NavBar({ logout }) {
         </div>
       ) : (
         <div>
-          <NavLink exact to="/" className="navbar-brand">
-            Jobly
-          </NavLink>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink to="/Login">Login</NavLink>
-            </NavItem>
-          </Nav>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink to="/signup">Sign Up</NavLink>
-            </NavItem>
-          </Nav>
+          <Navbar expand="md">
+            <NavLink
+              exact
+              to="/"
+              className="navbar-brand"
+              style={{ color: "white" }}
+            >
+              Jobly
+            </NavLink>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink to="/Login">Login</NavLink>
+              </NavItem>
+            </Nav>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink to="/signup">Sign Up</NavLink>
+              </NavItem>
+            </Nav>
+          </Navbar>
         </div>
       )}
     </div>
-
-    // Logged out
-    //   <div>
-    //   <Navbar expand="md">
-    //     <NavLink exact to="/" className="navbar-brand">
-    //       Jobly
-    //     </NavLink>
-    //     <Nav className="ml-auto" navbar>
-    //       <NavItem>
-    //         <NavLink to="/Login">Login</NavLink>
-    //       </NavItem>
-    //     </Nav>
-    //     <Nav className="ml-auto" navbar>
-    //       <NavItem>
-    //         <NavLink to="/signup">Sign Up</NavLink>
-    //       </NavItem>
-    //     </Nav>
-    //   </Navbar>
-    // </div>
   );
 }
 

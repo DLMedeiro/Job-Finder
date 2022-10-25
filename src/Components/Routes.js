@@ -9,7 +9,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import UserContext from "./UserContext";
 
-function Routes({ login, registerNewUser, update, apply }) {
+function Routes({ login, registerNewUser, update, apply, error }) {
   const user = useContext(UserContext);
 
   return (
@@ -32,7 +32,7 @@ function Routes({ login, registerNewUser, update, apply }) {
             <Profile login={login} update={update} />
           </Route>
           <Route exact path="/login">
-            <LoginForm login={login} />
+            <LoginForm login={login} error={error} />
           </Route>
           <Route path="*">
             <Home />

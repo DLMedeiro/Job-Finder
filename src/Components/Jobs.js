@@ -32,7 +32,6 @@ function Jobs({ apply }) {
 
   return (
     <div>
-      <h1>This is the Jobs Page</h1>
       <SearchForm searchFunction={searchFunction} />
       {!error ? (
         <div>

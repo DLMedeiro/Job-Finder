@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import UserContext from "./UserContext";
+import { Button } from "reactstrap";
 
 function Home() {
   const user = useContext(UserContext);
   return (
-    <div>
+    <div className="container">
       <div>
         <h1>Jobly</h1>
         <h4>All the jobs in one, convenient place.</h4>
@@ -15,8 +16,8 @@ function Home() {
         </div>
       ) : (
         <div>
-          <button>Log in</button>
-          <button>Sign Up</button>
+          <Button style={{ margin: "15px" }}>Log in</Button>
+          <Button>Sign Up</Button>
         </div>
       )}
     </div>

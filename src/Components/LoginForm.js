@@ -12,7 +12,7 @@ import {
   Form,
 } from "reactstrap";
 
-function LoginForm({ login }) {
+function LoginForm({ login, error }) {
   const user = useContext(UserContext);
   const INITIAL_STATE = {
     username: "",
@@ -42,7 +42,8 @@ function LoginForm({ login }) {
         </>
       ) : (
         <>
-          <section className="col-md-8">
+          {error > 0 ? { error } : ""}
+          <section>
             <Card>
               <CardBody className="text-center">
                 <Form>
@@ -62,7 +63,7 @@ function LoginForm({ login }) {
                     <Input
                       id="password"
                       required="required"
-                      type="text"
+                      type="password"
                       name="password"
                       value={userLogin.password}
                       onChange={handleChange}

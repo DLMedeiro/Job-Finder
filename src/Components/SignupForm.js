@@ -34,7 +34,7 @@ function SignupForm({ registerNewUser }) {
     // setFormData(INITIAL_STATE);
   };
   return (
-    <section className="col-md-8">
+    <section>
       <Card>
         <CardBody className="text-center">
           <Form>

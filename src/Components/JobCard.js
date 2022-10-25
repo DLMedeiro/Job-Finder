@@ -35,7 +35,7 @@ function JobCard({ id, title, companyName, salary, equity, apply }) {
   return (
     <section>
       <Card>
-        <CardBody>
+        <CardBody body outline>
           <CardTitle className="font-weight-bold text-center">
             {title}
           </CardTitle>

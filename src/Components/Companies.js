@@ -32,7 +32,6 @@ function Companies() {
 
   return (
     <div>
-      <h1>This is the Companies Page</h1>
       <SearchForm searchFunction={searchFunction} />
       {!error ? (
         <div>
