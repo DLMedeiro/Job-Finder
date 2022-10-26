@@ -5,12 +5,50 @@
     margin: 0;
   }
 
+  .hero {
+    /* background : url("../images/home/showcase.jpg") no-repeat center center/cover; */
+      /* image is up one level in the images folder */
+      /* center = center the image */
+      /* center/cover = center on x and y axis and cover page */
+    height:70vh;
+    /* color:white; */
+    position: relative;
+      /* added for the overlay section.  (".hero::before" needs to be positioned absolute, so this needs to be relative*/
+    }
+  .hero .content {
+    display:flex;
+      /* center content on page */
+    flex-direction: column;
+      /* flex-direction:row = items alinged in a row (default), column = items stacked */
+    align-items: center;
+      /* Aligns along cross axis.  Flex-direction = column, cross axis = x, items aligned on top middle of page*/
+    justify-content: center;
+      /* Aigns content along the main axis. Flex-direction = column, cross main = y, items will be alinged midway down the page, but needs a height for reference */
+    height: 100%;
+    /* since parent has a height of 100vh, used 100% to get to middle */
+    text-align:center;
+    padding: 0 20px;
+      /* prevents text from hitting the edges on smaller screens */
+    }
+  .hero .content h1 {
+    font-size: 55px;
+    }
+  .hero .content p {
+    font-size: 23px;
+    max-width: 600px;
+      /* prevents paragraph from extending out too far */
+    margin:20px 0 30px;
+      /* 20px - top, 0 left and right, 30 bottom  */
+    }
+  /* Button is styled in utilities.  if .hero .btn were used it would only apply to the hero section */
+
 .icons {
     padding: 30px;
     width: 100%;
-    position: absolute;
+    height:20vh;
+    /* position: absolute;
     top: 66%;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%); */
     }
       /* padding for whole icon */
   .icons h3 {

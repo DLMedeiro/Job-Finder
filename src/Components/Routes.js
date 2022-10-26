@@ -9,7 +9,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 import UserContext from "./UserContext";
 
-function Routes({ login, registerNewUser, update, apply, error, quantities }) {
+function Routes({ login, registerNewUser, update, apply, error }) {
   const user = useContext(UserContext);
 
   return (
@@ -17,7 +17,7 @@ function Routes({ login, registerNewUser, update, apply, error, quantities }) {
       {user.username ? (
         <Switch>
           <Route exact path="/">
-            <Home quantities={quantities} />
+            <Home />
           </Route>
           <Route exact path="/companies">
             <Companies />

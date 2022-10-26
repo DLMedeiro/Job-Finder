@@ -18,7 +18,7 @@ function NavBar({ logout }) {
               className="navbar-brand"
               style={{ color: "white" }}
             >
-              Jobly
+              Job Finder
             </NavLink>
             <Nav className="ml-auto" navbar>
               <NavItem>
@@ -53,7 +53,7 @@ function NavBar({ logout }) {
               className="navbar-brand"
               style={{ color: "white" }}
             >
-              Jobly
+              Job Finder
             </NavLink>
             <Nav className="ml-auto" navbar>
               <NavItem>

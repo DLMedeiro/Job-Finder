@@ -18,16 +18,14 @@ import {
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Home({ quantities }) {
+function Home() {
   const user = useContext(UserContext);
   return (
     <div>
-      <div className="container">
-        <div>
-          <h1>Jobly</h1>
-          <h4>All the jobs in one, convenient place.</h4>
-        </div>
-        <div>
+      <header className="hero">
+        <div className="content">
+          <h1>Job Finder</h1>
+          <p>All the jobs in one, convenient place.</p>
           {user.username ? (
             <div>
               <h2>Welcome Back {user.firstName}</h2>
@@ -43,7 +41,7 @@ function Home({ quantities }) {
             </div>
           )}
         </div>
-      </div>
+      </header>
 
       <section className="icons">
         <div className="flex-items">
