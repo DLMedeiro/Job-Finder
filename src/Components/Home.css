@@ -1,0 +1,46 @@
+* {
+  box-sizing:border-box;
+    /* prevents padding from taking up the width */
+    padding:0;
+    margin: 0;
+  }
+
+.icons {
+    padding: 30px;
+    width: 100%;
+    position: absolute;
+    top: 66%;
+    transform: translate(0, -50%);
+    }
+      /* padding for whole icon */
+  .icons h3 {
+    font-weight: bold;
+    margin-bottom:15px;
+    }
+  .icons i {
+    /* background-color:#28a745; */
+    color: black;
+    padding: 1rem;
+    /* border-radius: 50%; */
+    margin-bottom: 15px;
+  }
+
+  /* FLEX ITEMS */
+  .flex-items {
+    display: flex;
+    flex-direction:row;
+      /* flex-direction:row = items lined in a row (default), column = items stacked */
+    text-align: center;
+      /* aligned to left of page along the main axis (horizontanl) */
+    justify-content:left;
+      /* alignment along the main axis.  flex-direction = row, main axis = x.  Items move to the center top of the page*/
+    align-items:center;
+      /* alignment along the cross axis.  flex-direction=row, cross axis = y, brings items to the midway point on page, requires height to complete change */
+    height:100%;
+    }
+      /* used on icon section to bring items across page */
+    .flex-items > div {
+      padding: 20px;
+      width: 50%;
+    }
+      /* padding to divs inside flex. Calling out the divs directly related to .flex-items (child items) */

@@ -12,6 +12,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [token, setToken] = useState({});
   const [error, setError] = useState("");
+  const [quantities, setQuantities] = useState({});
 
   // Login function
   async function login(data, username) {
@@ -79,6 +80,10 @@ function App() {
     console.log(confirmation);
   }
 
+  useEffect(async () => {
+    setQuantities(await JoblyApi.getQuantites());
+  }, []);
+
   return (
     <div>
       <UserContext.Provider value={currentUser}>
@@ -90,6 +95,7 @@ function App() {
             update={update}
             apply={apply}
             error={error}
+            quantities={quantities}
           />
         </BrowserRouter>
       </UserContext.Provider>
