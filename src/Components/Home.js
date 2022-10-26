@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "./UserContext";
 import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function Home() {
   const user = useContext(UserContext);
@@ -16,8 +17,12 @@ function Home() {
         </div>
       ) : (
         <div>
-          <Button style={{ margin: "15px" }}>Log in</Button>
-          <Button>Sign Up</Button>
+          <Link to={"/login"}>
+            <Button style={{ margin: "15px" }}>Log in</Button>
+          </Link>
+          <Link to={"/signup"}>
+            <Button>Sign Up</Button>
+          </Link>
         </div>
       )}
     </div>
