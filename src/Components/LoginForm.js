@@ -28,7 +28,7 @@ function LoginForm({ login, error }) {
     }));
   };
 
-  const onSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     login(userLogin, userLogin.username);
     setUserLogin(INITIAL_STATE);
@@ -46,7 +46,7 @@ function LoginForm({ login, error }) {
           <section>
             <Card>
               <CardBody className="text-center">
-                <Form>
+                <Form onSubmit={submit}>
                   <FormGroup>
                     <Label htmlFor="username">UserName</Label>
                     <Input
@@ -69,7 +69,7 @@ function LoginForm({ login, error }) {
                       onChange={handleChange}
                     />
                   </FormGroup>
-                  <Button onClick={onSubmit}>Log In</Button>
+                  <Button>Log In</Button>
                 </Form>
               </CardBody>
             </Card>

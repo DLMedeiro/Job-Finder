@@ -17,7 +17,7 @@ function SearchFrom({ searchFunction }) {
     setSearch(value);
   };
 
-  const onSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     searchFunction(search);
   };
@@ -26,7 +26,7 @@ function SearchFrom({ searchFunction }) {
     <section>
       <Card>
         <CardBody className="text-center">
-          <Form>
+          <Form onSubmit={submit}>
             <FormGroup>
               <Input
                 id="search"
@@ -38,7 +38,7 @@ function SearchFrom({ searchFunction }) {
                 onChange={handleChange}
               />
             </FormGroup>
-            <Button onClick={onSubmit}>Submit</Button>
+            <Button>Submit</Button>
           </Form>
         </CardBody>
       </Card>

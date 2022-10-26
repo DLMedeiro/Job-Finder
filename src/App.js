@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Routes from "./Components/Routes";
-import { BrowserRouter, Redirect } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import JoblyApi from "./api.js";
 import UserContext from "./Components/UserContext";
@@ -71,7 +71,6 @@ function App() {
   }
 
   async function apply(id, username) {
-    // if
     let confirmation = await JoblyApi.applyJob(username, id);
     let user = await JoblyApi.loggedInUser(username);
     localStorage.setItem("user", JSON.stringify(user));

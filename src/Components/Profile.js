@@ -27,7 +27,7 @@ function Profile({ update }) {
     }));
   };
 
-  const onSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     update(formData);
   };
@@ -36,7 +36,7 @@ function Profile({ update }) {
       <h1>{user.firstName}'s Profile</h1>
       <Card>
         <CardBody>
-          <Form>
+          <Form onSubmit={submit}>
             <FormGroup>
               <Label htmlFor="username">Username</Label>
               <Input
@@ -92,7 +92,7 @@ function Profile({ update }) {
                 onChange={handleChange}
               />
             </FormGroup>
-            <Button onClick={onSubmit}>Update Profile</Button>
+            <Button>Update Profile</Button>
           </Form>
         </CardBody>
       </Card>

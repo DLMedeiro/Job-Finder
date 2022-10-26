@@ -27,7 +27,7 @@ function SignupForm({ registerNewUser }) {
     }));
   };
 
-  const onSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     // console.log(formData);
     registerNewUser(formData);
@@ -37,7 +37,7 @@ function SignupForm({ registerNewUser }) {
     <section>
       <Card>
         <CardBody className="text-center">
-          <Form>
+          <Form onSubmit={submit}>
             <FormGroup>
               <Label htmlFor="username">Username</Label>
               <Input
@@ -94,7 +94,7 @@ function SignupForm({ registerNewUser }) {
               />
             </FormGroup>
 
-            <Button onClick={onSubmit}>Add Item</Button>
+            <Button>Add Item</Button>
           </Form>
         </CardBody>
       </Card>
