@@ -1,4 +1,6 @@
 import axios from "axios";
+import Toast from "./Components/Toast";
+import "./Components/Toast.css";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
@@ -31,6 +33,7 @@ class JoblyApi {
     } catch (err) {
       console.error("API Error:", err.response);
       let message = err.response.data.error.message;
+      new Toast({ message: message, type: "danger" });
       throw Array.isArray(message) ? message : [message];
     }
   }
@@ -40,8 +43,8 @@ class JoblyApi {
   // log in a user
   static async loginUser(loginData) {
     let res = await this.request(`auth/token`, loginData, "post");
-    // loginData = object including username and password
-    // JoblyApi.token = res.token;
+    console.log(`res=${res}`);
+
     JoblyApi.token = res.token;
     localStorage.setItem("headToken", JSON.stringify(JoblyApi.token));
 

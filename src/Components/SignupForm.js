@@ -94,7 +94,7 @@ function SignupForm({ registerNewUser }) {
               />
             </FormGroup>
 
-            <Button>Add Item</Button>
+            <Button>Create Profile</Button>
           </Form>
         </CardBody>
       </Card>

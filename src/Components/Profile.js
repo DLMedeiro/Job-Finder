@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import UserContext from "./UserContext";
+import Toast from "./Toast";
+import "./Toast.css";
+
 import {
   Card,
   CardBody,
@@ -30,6 +33,10 @@ function Profile({ update }) {
   const submit = (e) => {
     e.preventDefault();
     update(formData);
+    new Toast({
+      message: "Changes Saved",
+      type: "success",
+    });
   };
   return (
     <section>

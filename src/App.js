@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import JoblyApi from "./api.js";
 import UserContext from "./Components/UserContext";
+import Toast from "./Components/Toast";
+import "./Components/Toast.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -12,6 +14,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [token, setToken] = useState({});
   const [error, setError] = useState("");
+
+  // Errors
 
   // Login function
   async function login(data, username) {
@@ -21,9 +25,10 @@ function App() {
       setToken(res);
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("token", JSON.stringify(res));
-    } else {
-      setError("Incorrect name or password");
-      console.log(error);
+      new Toast({
+        message: `Welcome ${user.firstName}`,
+        type: "success",
+      });
     }
   }
 
@@ -36,6 +41,10 @@ function App() {
   async function logout() {
     localStorage.clear();
     setCurrentUser({});
+    new Toast({
+      message: `Logout Complete`,
+      type: "success",
+    });
   }
 
   async function registerNewUser(data) {
@@ -57,7 +66,7 @@ function App() {
     };
     let testToken = await JoblyApi.loginUser(userCheck);
     if (!testToken) {
-      console.log("incorrect password provided");
+      setError("incorrect password provided");
     } else {
       let updatedInfo = {
         firstName: userData.firstName,

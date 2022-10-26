@@ -29,7 +29,7 @@ function Routes({ login, registerNewUser, update, apply, error }) {
             <Jobs apply={apply} />
           </Route>
           <Route exact path="/profile">
-            <Profile login={login} update={update} />
+            <Profile login={login} update={update} error={error} />
           </Route>
           <Route exact path="/login">
             <LoginForm login={login} error={error} />

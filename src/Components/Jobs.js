@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import SearchForm from "./SearchForm";
 import JobCard from "./JobCard";
 import JoblyApi from "../api.js";
+import Toast from "./Toast";
+import "./Toast.css";
 
 function Jobs({ apply }) {
   const [jobs, setJobs] = useState([]);
-  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   async function searchFunction(search) {
     let results = await JoblyApi.searchJobs(search);
     if (results.length === 0) {
-      setError(true);
+      new Toast({ message: "Sorry, no matching jobs found", type: "danger" });
     }
     setJobs(results);
     setIsLoading(false);
@@ -33,23 +34,19 @@ function Jobs({ apply }) {
   return (
     <div>
       <SearchForm searchFunction={searchFunction} />
-      {!error ? (
-        <div>
-          {jobs.map((job) => (
-            <JobCard
-              key={job.id}
-              id={job.id}
-              title={job.title}
-              companyName={job.companyName}
-              salary={job.salary}
-              equity={job.equity}
-              apply={apply}
-            />
-          ))}
-        </div>
-      ) : (
-        <p>Sorry, no results were found!</p>
-      )}
+      <div>
+        {jobs.map((job) => (
+          <JobCard
+            key={job.id}
+            id={job.id}
+            title={job.title}
+            companyName={job.companyName}
+            salary={job.salary}
+            equity={job.equity}
+            apply={apply}
+          />
+        ))}
+      </div>
     </div>
   );
 }
