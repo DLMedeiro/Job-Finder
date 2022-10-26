@@ -97,7 +97,6 @@ class JoblyApi {
     } else {
       console.log("already applied");
     }
-    // Why add empty object?
     // return res;
   }
 }
