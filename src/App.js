@@ -65,8 +65,9 @@ function App() {
         email: userData.email,
       };
       await JoblyApi.updateUser(currentUser.username, updatedInfo);
-      setCurrentUser({});
-      login(userCheck, currentUser.username);
+      let user = await JoblyApi.loggedInUser(currentUser.username);
+      localStorage.setItem("user", JSON.stringify(user));
+      setCurrentUser(JSON.parse(localStorage.getItem("user")));
     }
   }
 
