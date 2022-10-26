@@ -71,9 +71,9 @@ function App() {
     }
   }
 
-  async function apply(id, username) {
-    let confirmation = await JoblyApi.applyJob(username, id);
-    let user = await JoblyApi.loggedInUser(username);
+  async function apply(id) {
+    let confirmation = await JoblyApi.applyJob(currentUser.username, id);
+    let user = await JoblyApi.loggedInUser(currentUser.username);
     localStorage.setItem("user", JSON.stringify(user));
     setCurrentUser(JSON.parse(localStorage.getItem("user")));
     console.log(confirmation);

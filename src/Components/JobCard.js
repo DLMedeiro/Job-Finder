@@ -20,7 +20,7 @@ function JobCard({ id, title, companyName, salary, equity, apply }) {
     if (user.applications.indexOf(id) > -1) {
       console.log("Application already submitted");
     } else {
-      apply(id, user.username);
+      apply(id);
     }
   };
 
@@ -42,10 +42,8 @@ function JobCard({ id, title, companyName, salary, equity, apply }) {
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             {companyName}
           </CardSubtitle>
-          <CardText className="font-italic">
-            <p>Salary: {salary}</p>
-            <p>Equity: {equity}</p>
-          </CardText>
+          <CardText className="font-italic">Salary: {salary}</CardText>
+          <CardText className="font-italic">Equity: {equity}</CardText>
           {applied ? (
             <Button disabled>Applied</Button>
           ) : (

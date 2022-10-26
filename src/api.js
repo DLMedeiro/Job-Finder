@@ -19,8 +19,11 @@ class JoblyApi {
 
     //there are multiple ways to pass an authorization token, this is how you pass it in the header.
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
-    const url = `${BASE_URL}/${endpoint}`;
+    // const url = `${BASE_URL}/${endpoint}`;
+    let url = new URL(endpoint, BASE_URL);
+    // Use url constructor here
     const headers = { Authorization: `Bearer ${JoblyApi.token}` };
+    console.log(headers);
     const params = method === "get" ? data : {};
 
     try {
@@ -38,7 +41,10 @@ class JoblyApi {
   static async loginUser(loginData) {
     let res = await this.request(`auth/token`, loginData, "post");
     // loginData = object including username and password
+    // JoblyApi.token = res.token;
     JoblyApi.token = res.token;
+    localStorage.setItem("headToken", JSON.stringify(JoblyApi.token));
+
     return JoblyApi.token;
   }
 
@@ -91,6 +97,12 @@ class JoblyApi {
 
   // Apply for a job
   static async applyJob(username, id) {
+    // Work around for header being cleared on page reload, preventing apply function from working
+    if (localStorage.length >= 0) {
+      if (JoblyApi.token === undefined) {
+        JoblyApi.token = JSON.parse(localStorage.getItem("headToken"));
+      }
+    }
     let res = await this.request(`users/${username}/jobs/${id}`, {}, "post");
     if (res) {
       console.log(res);
