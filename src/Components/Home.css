@@ -4,9 +4,14 @@
     padding:0;
     margin: 0;
   }
+  
+  body {
+    background : url("../images/pexels-pixabay-262488.jpg") no-repeat center center/cover;
 
+  }
+  
   .hero {
-    /* background : url("../images/home/showcase.jpg") no-repeat center center/cover; */
+    /* background-color: rgba(252, 250, 250, 0.4); */
       /* image is up one level in the images folder */
       /* center = center the image */
       /* center/cover = center on x and y axis and cover page */

@@ -2,7 +2,8 @@ import axios from "axios";
 import Toast from "./Components/Toast";
 import "./Components/Toast.css";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL =
+  "https://jobfinder-backend-b8fv.onrender.com" || "http://localhost:3001";
 
 /** API Class.
  *
