@@ -12,6 +12,7 @@ nav {
 nav a {
   color: #f1e7dd;
   text-decoration: none;
+  font-size: 1.25rem;;
 }
 
 nav a.active {
@@ -38,3 +39,9 @@ nav a:not(.navbar-brand):hover {
   font-weight: bold;
 }
 
+@media screen and (min-width: 750px){
+  .nav-item {
+    width: 100px;
+    text-align: center;
+  }
+}

@@ -7,7 +7,7 @@ import JoblyApi from "./api.js";
 import UserContext from "./Components/UserContext";
 import Toast from "./Components/Toast";
 import "./Components/Toast.css";
-
+import NavAppBar from "./Components/NavAppBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -92,7 +92,8 @@ function App() {
     <div>
       <UserContext.Provider value={currentUser}>
         <BrowserRouter>
-          <NavBar logout={logout} />
+          {/* <NavBar logout={logout} /> */}
+          <NavAppBar logout={logout} />
           <Routes
             login={login}
             registerNewUser={registerNewUser}

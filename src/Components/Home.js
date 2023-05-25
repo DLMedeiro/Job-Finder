@@ -25,11 +25,11 @@ function Home() {
   const user = useContext(UserContext);
   return (
     <Grid container spacing={0} className="hero">
-      <Grid item xs={12} className="hero-left">
+      <Grid className="hero-left">
         <div className="content">
           <h1>Job Finder</h1>
           <p>All the jobs</p>
-          <p>In one convenient place</p>
+          <p>One convenient place</p>
 
           {user.username ? (
             <div>
@@ -47,7 +47,7 @@ function Home() {
           )}
         </div>
       </Grid>
-      <Grid item xs={12} className="hero-right">
+      <Grid className="hero-right">
         <div className="faded">
           {/* <img src={HeroImage} alt="man excited jumping" />
           <div className="shadow"></div> */}
