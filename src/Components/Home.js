@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import "../styles/home.css";
+import "../styles/utilities.css";
 import UserContext from "./UserContext";
-import "./Home.css";
+import HeroImage from "../images/pexels-vlad-chețan-2923156.jpg";
 import {
   Button,
   Col,
@@ -10,6 +12,7 @@ import {
   CardText,
   Container,
 } from "reactstrap";
+import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,11 +24,13 @@ import {
 function Home() {
   const user = useContext(UserContext);
   return (
-    <div>
-      <header className="hero">
+    <Grid container spacing={0} className="hero">
+      <Grid item xs={12} className="hero-left">
         <div className="content">
           <h1>Job Finder</h1>
-          <p>All the jobs in one, convenient place.</p>
+          <p>All the jobs</p>
+          <p>In one convenient place</p>
+
           {user.username ? (
             <div>
               <h2>Welcome Back {user.firstName}</h2>
@@ -33,17 +38,23 @@ function Home() {
           ) : (
             <div>
               <Link to={"/login"}>
-                <Button style={{ margin: "15px" }}>Log in</Button>
+                <Button id="btn">Log in</Button>
               </Link>
               <Link to={"/signup"}>
-                <Button>Sign Up</Button>
+                <Button id="btn">Sign Up</Button>
               </Link>
             </div>
           )}
         </div>
-      </header>
+      </Grid>
+      <Grid item xs={12} className="hero-right">
+        <div className="faded">
+          {/* <img src={HeroImage} alt="man excited jumping" />
+          <div className="shadow"></div> */}
+        </div>
+      </Grid>
 
-      <section className="icons">
+      {/* <section className="icons">
         <div className="flex-items">
           <div>
             <i>
@@ -70,8 +81,8 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section> */}
+    </Grid>
   );
 }
 

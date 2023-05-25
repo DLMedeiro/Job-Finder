@@ -1,0 +1,57 @@
+html {
+    background-color: #db4439;
+    /* color: #f1e7dd; */
+    overflow: hidden;
+  
+}
+.hero{
+    background-color: #db4439;
+    height: 90vh;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #f1e7dd;
+
+}
+.hero-left h1{
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Impact, fantasy,  sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+}
+.hero-left p{
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Impact, fantasy,  sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;;
+}
+
+/* .hero-right{
+    justify-content: center;
+    align-items: center;
+} */
+
+.faded {
+    /* position: absolute;
+    bottom: 0;
+    right: 0; */
+    margin-top: 2rem;
+    transform: rotate(0.03turn);
+
+    border: #db4439 2px solid;
+    /* width: 75%; */
+    /* background-color: #FFFFFF; */
+    box-shadow: inset 0px 20px 50px 10px #db4439;
+    background-image: url('../images/pexels-vlad-chețan-2923156.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    padding: 10px;
+    background-clip: padding-box;
+  }

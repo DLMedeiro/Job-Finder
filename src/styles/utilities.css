@@ -1,0 +1,15 @@
+#btn {
+    background-color: #db4439;
+    border: #f1e7dd 2px solid;
+    /* width: 100%; */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Impact, fantasy,  sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 10px;
+}
+#btn:hover {
+    background-color: #db4439;
+}
+
