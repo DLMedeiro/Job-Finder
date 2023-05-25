@@ -67,15 +67,15 @@ html {
     }
     .faded{
         height: 900px;
-        margin-top: 7rem;
-        margin-left: 7rem;
+        margin-top: 3rem;
+        margin-left: 0rem;
     }
     .hero{
         padding:  0;
     }
     .hero-left h1{
-        line-height: 18rem;
-        font-size: 18rem;
+        line-height: 13rem;
+        font-size: 15rem;
         margin-bottom: 3rem;
 
     }
