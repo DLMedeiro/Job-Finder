@@ -46,7 +46,7 @@
 }
 
 
-@media screen and (min-width: 1450px){
+@media screen and (min-width: 800px){
   #nav-toggle, #nav-link{
     font-size: 2rem;
   }

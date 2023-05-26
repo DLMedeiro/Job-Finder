@@ -24,8 +24,8 @@ function SearchFrom({ searchFunction }) {
   };
 
   return (
-    <Card id="form-group">
-      <CardBody className="text-center">
+    <Card id="form-group-search">
+      <CardBody>
         <Form onSubmit={submit}>
           <FormGroup>
             <Input

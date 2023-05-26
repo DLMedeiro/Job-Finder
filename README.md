@@ -11,3 +11,5 @@ Mobile first design
 Creating a mobile menu option using previous work with HTML and SCSS
 
 Login takes a while - add spinner
+
+split sign up form on larger screens and profile

@@ -34,20 +34,28 @@ function JobCard({ id, title, companyName, salary, equity, apply }) {
 
   return (
     <section>
-      <Card body outline className="text-center">
-        <CardBody>
-          <CardTitle tag="h5" className="font-weight-bold">
+      <Card body outline id="form-group-info">
+        <CardBody className="card-body">
+          <CardTitle tag="h1" className="font-weight-bold" id="card-title">
             {title}
           </CardTitle>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">
+          <CardSubtitle className="mb-2" tag="h3" id="card-text">
             {companyName}
           </CardSubtitle>
-          <CardText className="font-italic">Salary: {salary}</CardText>
-          <CardText className="font-italic">Equity: {equity}</CardText>
+          <CardText id="card-text" tag="h4" className="font-italic">
+            Salary: {salary}
+          </CardText>
+          <CardText id="card-text" tag="h4" className="font-italic">
+            Equity: {equity}
+          </CardText>
           {applied ? (
-            <Button disabled>Applied</Button>
+            <Button id="btn" disabled>
+              Applied
+            </Button>
           ) : (
-            <Button onClick={submit}>Apply</Button>
+            <Button id="btn" onClick={submit}>
+              Apply
+            </Button>
           )}
         </CardBody>
       </Card>

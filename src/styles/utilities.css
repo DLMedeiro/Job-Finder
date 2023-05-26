@@ -15,7 +15,7 @@
     color: #db4439;
 }
 
-@media screen and (min-width: 750px){
+@media screen and (min-width: 800px){
     #btn {
         margin-bottom: 4rem;
     }

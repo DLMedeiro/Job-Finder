@@ -45,7 +45,7 @@ html {
     /* position: absolute;
     bottom: 0;
     right: 0; */
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     transform: rotate(0.03turn);
 
     border: #db4439 2px solid;
@@ -83,12 +83,13 @@ html {
         font-size: 3rem;
     }
   }
-  @media screen and (min-width: 750px) and (max-width: 1450px){
+  @media screen and (min-width: 800px) and (max-width: 1450px){
     .hero-left, .hero-right{
         width: 50%;
     }
     .faded{
         height: 700px;
+        margin-top: 2rem;
         margin-left: 5rem;
     }
     .hero{

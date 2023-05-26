@@ -5,22 +5,22 @@ import { Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
 
 function CompanyCard({ title, description, logo, handle }) {
   return (
-    <section>
-      <Card body outline className="text-center">
-        <CardBody>
-          {/* <img src={logo} alt={logo}></img> */}
-          <CardTitle tag="h5" className="font-weight-bold ">
-            {title}
-          </CardTitle>
-          <CardText className="font-italic">{description}</CardText>
-          <Link to={`/companies/${handle}`}>
-            <Button type="button" id="btn">
-              Learn More
-            </Button>
-          </Link>
-        </CardBody>
-      </Card>
-    </section>
+    <Card body outline id="form-group-info">
+      <CardBody className="card-body">
+        {/* <img src={logo} alt={logo}></img> */}
+        <CardTitle tag="h1" className="font-weight-bold" id="card-title">
+          {title}
+        </CardTitle>
+        <CardText id="card-text" tag="h4">
+          {description}
+        </CardText>
+        <Link to={`/companies/${handle}`}>
+          <Button type="button" id="btn">
+            Learn More
+          </Button>
+        </Link>
+      </CardBody>
+    </Card>
   );
 }
 
