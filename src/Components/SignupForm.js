@@ -34,71 +34,85 @@ function SignupForm({ registerNewUser }) {
     // setFormData(INITIAL_STATE);
   };
   return (
-    <section>
-      <Card>
-        <CardBody className="text-center">
-          <Form onSubmit={submit}>
-            <FormGroup>
-              <Label htmlFor="username">Username</Label>
-              <Input
-                id="username"
-                required="required"
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                required="required"
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="firstName">First Name</Label>
-              <Input
-                id="firstName"
-                required="required"
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="lastName">Last Name</Label>
-              <Input
-                id="lastName"
-                required="required"
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                required="required"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </FormGroup>
+    <Card id="form-group">
+      <h1>Sign Up</h1>
+      <CardBody className="text-center">
+        <Form onSubmit={submit}>
+          <FormGroup>
+            <Label className="form-label" htmlFor="username">
+              Username
+            </Label>
+            <Input
+              className="form-control"
+              id="username"
+              required="required"
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="form-label" htmlFor="password">
+              Password
+            </Label>
+            <Input
+              className="form-control"
+              id="password"
+              required="required"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="form-label" htmlFor="firstName">
+              First Name
+            </Label>
+            <Input
+              className="form-control"
+              id="firstName"
+              required="required"
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="form-label" htmlFor="lastName">
+              Last Name
+            </Label>
+            <Input
+              className="form-control"
+              id="lastName"
+              required="required"
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className="form-label" htmlFor="email">
+              Email
+            </Label>
+            <Input
+              className="form-control"
+              id="email"
+              required="required"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </FormGroup>
 
-            <Button>Create Profile</Button>
-          </Form>
-        </CardBody>
-      </Card>
-    </section>
+          <Button id="btn">Create Profile</Button>
+        </Form>
+      </CardBody>
+    </Card>
   );
 }
 

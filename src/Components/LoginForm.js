@@ -43,37 +43,38 @@ function LoginForm({ login, error }) {
       ) : (
         <>
           {error > 0 ? { error } : ""}
-          <section>
-            <Card>
-              <CardBody className="text-center">
-                <Form onSubmit={submit}>
-                  <FormGroup>
-                    <Label htmlFor="username">UserName</Label>
-                    <Input
-                      id="username"
-                      required="required"
-                      type="text"
-                      name="username"
-                      value={userLogin.username}
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label htmlFor="password">Password</Label>
-                    <Input
-                      id="password"
-                      required="required"
-                      type="password"
-                      name="password"
-                      value={userLogin.password}
-                      onChange={handleChange}
-                    />
-                  </FormGroup>
-                  <Button>Log In</Button>
-                </Form>
-              </CardBody>
-            </Card>
-          </section>
+          <Card id="form-group">
+            <h1>Login</h1>
+            <CardBody className="text-center">
+              <Form onSubmit={submit}>
+                <FormGroup>
+                  <Label htmlFor="username">UserName</Label>
+                  <Input
+                    className="form-control"
+                    id="username"
+                    required="required"
+                    type="text"
+                    name="username"
+                    value={userLogin.username}
+                    onChange={handleChange}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    className="form-control"
+                    id="password"
+                    required="required"
+                    type="password"
+                    name="password"
+                    value={userLogin.password}
+                    onChange={handleChange}
+                  />
+                </FormGroup>
+                <Button id="btn">Log In</Button>
+              </Form>
+            </CardBody>
+          </Card>
         </>
       )}
     </>

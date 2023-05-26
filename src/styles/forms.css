@@ -1,0 +1,37 @@
+#form-group{
+    background-color: #db4439;
+    color: #f1e7dd;
+    padding: 1rem;
+    align-items: center;
+    font-family: Impact, fantasy,  sans-serif;
+    border-radius: 0;
+    border-color: transparent;
+}
+#form-group h1 {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.form-label{
+    font-size: 1rem !important;
+    margin-bottom: 0 !important;
+}
+#search{
+    font-size: 2rem;
+    color: #db4439 !important;
+    background-color: #f1e7dd !important;
+    letter-spacing: 1px !important;
+}
+.form-control{
+    background-color: #db4439 !important;
+    color: #f1e7dd !important;
+    letter-spacing: 1px !important;
+}
+
+.form-control:focus{
+    border-color: #f1e7dd !important;
+    box-shadow: 0 0 0 0.05rem #f1e7dd !important;
+  }

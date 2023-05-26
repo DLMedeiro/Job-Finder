@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/forms.css";
 import {
   Card,
   CardBody,
@@ -23,26 +24,25 @@ function SearchFrom({ searchFunction }) {
   };
 
   return (
-    <section>
-      <Card>
-        <CardBody className="text-center">
-          <Form onSubmit={submit}>
-            <FormGroup>
-              <Input
-                id="search"
-                required="required"
-                type="text"
-                name="search"
-                placeholder="Enter search term"
-                value={search}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <Button>Submit</Button>
-          </Form>
-        </CardBody>
-      </Card>
-    </section>
+    <Card id="form-group">
+      <CardBody className="text-center">
+        <Form onSubmit={submit}>
+          <FormGroup>
+            <Input
+              className="form-control-search"
+              id="search"
+              required="required"
+              type="text"
+              name="search"
+              placeholder="Enter search term"
+              value={search}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <Button id="btn">Submit</Button>
+        </Form>
+      </CardBody>
+    </Card>
   );
 }
 

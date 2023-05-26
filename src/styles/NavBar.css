@@ -2,15 +2,16 @@
   background-color:#db4439;
 }
 #nav-brand{
-  font-size: 3rem;
+  font-size: 2rem;
   text-decoration: none;
   color: #f1e7dd;
 }
-#nav-toggle, #nav-link, .toggler-btn, .toggler-line{
+#nav-toggle, .toggler-btn, .toggler-line{
   color: #f1e7dd;
   font-size: 1.5rem;
 }
 #nav-link{
+  color: #f1e7dd;
   padding: 1rem;
   text-decoration: none;
   border-bottom: 4px solid transparent;
@@ -48,6 +49,9 @@
 @media screen and (min-width: 1450px){
   #nav-toggle, #nav-link{
     font-size: 2rem;
+  }
+  #nav-brand{
+    font-size: 3rem;
   }
 }
 

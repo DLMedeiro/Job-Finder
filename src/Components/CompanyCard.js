@@ -14,7 +14,9 @@ function CompanyCard({ title, description, logo, handle }) {
           </CardTitle>
           <CardText className="font-italic">{description}</CardText>
           <Link to={`/companies/${handle}`}>
-            <Button type="button">Learn More</Button>
+            <Button type="button" id="btn">
+              Learn More
+            </Button>
           </Link>
         </CardBody>
       </Card>

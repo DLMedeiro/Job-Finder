@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import UserContext from "./UserContext";
 import Toast from "./Toast";
 import "./Toast.css";
+import "../styles/forms.css";
 
 import {
   Card,
@@ -39,71 +40,74 @@ function Profile({ update }) {
     });
   };
   return (
-    <section>
+    <Card id="form-group">
       <h1>{user.firstName}'s Profile</h1>
-      <Card>
-        <CardBody>
-          <Form onSubmit={submit}>
-            <FormGroup>
-              <Label htmlFor="username">Username</Label>
-              <Input
-                disabled
-                id="username"
-                required="required"
-                type="text"
-                name="username"
-                value={user.username}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="firstName">First Name</Label>
-              <Input
-                id="firstName"
-                required="required"
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="lastName">Last Name</Label>
-              <Input
-                id="lastName"
-                required="required"
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                required="required"
-                type="text"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label htmlFor="password">Confirm Password</Label>
-              <Input
-                id="password"
-                required="required"
-                type="password"
-                name="password"
-                // value={formData.password}
-                onChange={handleChange}
-              />
-            </FormGroup>
-            <Button>Update Profile</Button>
-          </Form>
-        </CardBody>
-      </Card>
-    </section>
+      <CardBody>
+        <Form onSubmit={submit}>
+          <FormGroup>
+            <Label htmlFor="username">Username</Label>
+            <Input
+              className="form-control"
+              disabled
+              id="username"
+              required="required"
+              type="text"
+              name="username"
+              value={user.username}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="firstName">First Name</Label>
+            <Input
+              className="form-control"
+              id="firstName"
+              required="required"
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="lastName">Last Name</Label>
+            <Input
+              className="form-control"
+              id="lastName"
+              required="required"
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              className="form-control"
+              id="email"
+              required="required"
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="password">Confirm Password</Label>
+            <Input
+              className="form-control"
+              id="password"
+              required="required"
+              type="password"
+              name="password"
+              // value={formData.password}
+              onChange={handleChange}
+            />
+          </FormGroup>
+          <Button id="btn">Update Profile</Button>
+        </Form>
+      </CardBody>
+    </Card>
   );
 }
 
