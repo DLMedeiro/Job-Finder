@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Redirect } from "react-router-dom";
 import UserContext from "./UserContext";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 import {
   Card,
@@ -13,6 +14,7 @@ import {
 } from "reactstrap";
 
 function LoginForm({ login, error }) {
+  const [loading, setLoading] = useState(false);
   const user = useContext(UserContext);
   const INITIAL_STATE = {
     username: "",
@@ -32,7 +34,20 @@ function LoginForm({ login, error }) {
     e.preventDefault();
     login(userLogin, userLogin.username);
     setUserLogin(INITIAL_STATE);
+    setLoading(true);
   };
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+    },
+    horizontal: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      padding: 10,
+    },
+  });
 
   return (
     <>
@@ -46,6 +61,13 @@ function LoginForm({ login, error }) {
           <Card id="form-group">
             <h1>Login</h1>
             <CardBody className="text-center">
+              {loading ? (
+                <View style={[styles.container, styles.horizontal]}>
+                  <ActivityIndicator size="large" color="#f1e7dd" />
+                </View>
+              ) : (
+                ""
+              )}
               <Form onSubmit={submit}>
                 <FormGroup>
                   <Label htmlFor="username">UserName</Label>

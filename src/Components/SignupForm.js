@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+
 import {
   Card,
   CardBody,
@@ -12,6 +14,8 @@ import {
 } from "reactstrap";
 
 function SignupForm({ registerNewUser }) {
+  const [loading, setLoading] = useState(false);
+
   const INITIAL_STATE = {
     username: "",
     firstName: "",
@@ -34,11 +38,32 @@ function SignupForm({ registerNewUser }) {
     // console.log(formData);
     registerNewUser(formData);
     // setFormData(INITIAL_STATE);
+    setLoading(true);
   };
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+    },
+    horizontal: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      padding: 10,
+    },
+  });
+
   return (
     <Card id="form-group">
       <h1>Sign Up</h1>
       <CardBody className="text-center">
+        {loading ? (
+          <View style={[styles.container, styles.horizontal]}>
+            <ActivityIndicator size="large" color="#f1e7dd" />
+          </View>
+        ) : (
+          ""
+        )}
         <Form onSubmit={submit}>
           <Row>
             <Col md={6}>

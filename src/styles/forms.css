@@ -1,12 +1,12 @@
 #form-group-info{
-    background-color: #db4439;
-    color: #f1e7dd;
+    background-color: #f1e7dd;
+    color: #6c757d;
     padding: 1rem;
     align-items: left;
     border-radius: 0;
     /* border-color: transparent; */
-    border-bottom: 2px solid #f1e7dd;
-    border-top: 2px solid #f1e7dd;
+    border-bottom: 2px solid #db4439;
+    border-top: 2px solid #db4439;
 }
 #form-group-search , #btn{
     text-align: center;

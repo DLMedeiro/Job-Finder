@@ -27,9 +27,9 @@ function Jobs({ apply }) {
     getAllJobs();
   }, []);
 
-  if (isLoading) {
-    return <p>Loading &hellip;</p>;
-  }
+  // if (isLoading) {
+  //   return <p>Loading &hellip;</p>;
+  // }
 
   return (
     <div>
