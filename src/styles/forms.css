@@ -67,6 +67,10 @@
     box-shadow: 0 0 0 0.05rem #f1e7dd !important;
   }
 
+.form-grouping{
+    display: block
+}
+
   @media screen and (min-width: 1450px){
     #form-group h1 {
         font-size: 4rem;
