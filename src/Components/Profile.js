@@ -12,6 +12,8 @@ import {
   Button,
   FormGroup,
   Form,
+  Row,
+  Col,
 } from "reactstrap";
 
 function Profile({ update }) {
@@ -42,56 +44,68 @@ function Profile({ update }) {
   return (
     <Card id="form-group">
       <h1>{user.firstName}'s Profile</h1>
-      <CardBody>
+      <CardBody className="text-center">
         <Form onSubmit={submit}>
-          <FormGroup>
-            <Label htmlFor="username">Username</Label>
-            <Input
-              className="form-control"
-              disabled
-              id="username"
-              required="required"
-              type="text"
-              name="username"
-              value={user.username}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="firstName">First Name</Label>
-            <Input
-              className="form-control"
-              id="firstName"
-              required="required"
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="lastName">Last Name</Label>
-            <Input
-              className="form-control"
-              id="lastName"
-              required="required"
-              type="text"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              className="form-control"
-              id="email"
-              required="required"
-              type="text"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </FormGroup>
+          <Row>
+            <Col md={6}>
+              <FormGroup>
+                <Label htmlFor="username">Username</Label>
+                <Input
+                  className="form-control"
+                  disabled
+                  id="username"
+                  required="required"
+                  type="text"
+                  name="username"
+                  value={user.username}
+                />
+              </FormGroup>
+            </Col>
+            <Col md={6}>
+              <FormGroup>
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  className="form-control"
+                  id="email"
+                  required="required"
+                  type="text"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <FormGroup>
+                <Label htmlFor="firstName">First Name</Label>
+                <Input
+                  className="form-control"
+                  id="firstName"
+                  required="required"
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
+              </FormGroup>
+            </Col>
+            <Col md={6}>
+              <FormGroup>
+                <Label htmlFor="lastName">Last Name</Label>
+                <Input
+                  className="form-control"
+                  id="lastName"
+                  required="required"
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
           <FormGroup>
             <Label htmlFor="password">Confirm Password</Label>
             <Input

@@ -42,13 +42,13 @@
     width: 100%;
     text-transform: uppercase;
     letter-spacing: 0px;
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-weight: 500;
 }
 
 .form-label{
-    font-size: 1rem !important;
-    margin-bottom: 0 !important;
+    font-size: 2rem !important;
+    margin-bottom: 5px !important;
 }
 #search{
     font-size: 2rem;
@@ -60,6 +60,7 @@
     background-color: #db4439 !important;
     color: #f1e7dd !important;
     letter-spacing: 1px !important;
+    font-size: 2rem !important;
 }
 
 .form-control:focus{
@@ -71,16 +72,3 @@
     display: block
 }
 
-  @media screen and (min-width: 1450px){
-    #form-group h1 {
-        font-size: 4rem;
-    }
-    .form-label{
-        font-size: 2rem !important;
-        margin-bottom: 5px !important;
-    }
-    .form-control{
-        font-size: 2rem !important;
-
-    }
-  }
