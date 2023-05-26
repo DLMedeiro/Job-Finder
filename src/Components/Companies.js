@@ -4,6 +4,7 @@ import CompanyCard from "./CompanyCard";
 import JoblyApi from "../api.js";
 import Toast from "./Toast";
 import "./Toast.css";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 function Companies() {
   const [companies, setCompanies] = useState([]);
@@ -30,9 +31,27 @@ function Companies() {
     getAllCompanies();
   }, []);
 
-  // if (isLoading) {
-  //   return <p>Loading &hellip;</p>;
-  // }
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+    },
+    horizontal: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      padding: 10,
+    },
+  });
+
+  if (isLoading) {
+    return (
+      <div id="form-group-search">
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#f1e7dd" />
+        </View>
+      </div>
+    );
+  }
 
   return (
     <div>
