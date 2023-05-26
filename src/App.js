@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./styles/home.css";
 import Routes from "./Components/Routes";
 import { BrowserRouter } from "react-router-dom";
-import NavBar from "./Components/NavBar";
 import JoblyApi from "./api.js";
 import UserContext from "./Components/UserContext";
 import Toast from "./Components/Toast";
@@ -92,7 +91,6 @@ function App() {
     <div>
       <UserContext.Provider value={currentUser}>
         <BrowserRouter>
-          {/* <NavBar logout={logout} /> */}
           <NavAppBar logout={logout} />
           <Routes
             login={login}
