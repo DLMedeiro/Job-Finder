@@ -6,6 +6,8 @@ View application at: https://job-finder-frontend.onrender.com/
 
 
 ## Learnings
+### Mockaroo and ElephantSQL 
+Used these services to create data and deploy database
 ### Mobile first design
 After completing the functionality of this project I chose to build out the design with a mobile first approach. This strategy allowed me to create a better user experience across mobile devices, and made for an easier transition when developing the design for larger screens. 
 ### Reactstrap Navbar

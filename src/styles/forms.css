@@ -8,7 +8,7 @@
     border-bottom: 2px solid #db4439;
     border-top: 2px solid #db4439;
 }
-#form-group-search , #btn{
+#form-group-search , #form-group-company, #btn{
     text-align: center;
 }
 #form-group-search{
@@ -46,6 +46,16 @@
     font-weight: 500;
 }
 
+#form-group-company{
+    background-color: #f1e7dd;
+    ;
+    color: #db4439;
+    padding: 1rem;
+    font-family: Impact, fantasy,  sans-serif;
+    border-radius: 0;
+    border-color: transparent;
+}
+
 .form-label{
     font-size: 2rem !important;
     margin-bottom: 5px !important;
@@ -55,6 +65,8 @@
     color: #db4439 !important;
     background-color: #f1e7dd !important;
     letter-spacing: 1px !important;
+    max-width:50rem;
+    margin: auto;
 }
 .form-control{
     background-color: #db4439 !important;

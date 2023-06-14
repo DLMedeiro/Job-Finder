@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "../styles/home.css";
 import "../styles/utilities.css";
 import UserContext from "./UserContext";
-import HeroImage from "../images/pexels-vlad-chețan-2923156.jpg";
 import {
   Button,
   Col,

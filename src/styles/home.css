@@ -1,7 +1,6 @@
 html {
     background-color: #db4439;
     /* color: #f1e7dd; */
-    /* overflow: hidden; */
   
 }
 .hero{
@@ -12,6 +11,7 @@ html {
     align-items: center;
     text-align: center;
     color: #f1e7dd;
+    overflow: hidden;
 
 }
 .hero-left{
@@ -45,21 +45,26 @@ html {
     /* position: absolute;
     bottom: 0;
     right: 0; */
-    margin-top: 2rem;
-    transform: rotate(0.03turn);
+    margin-top: 2.5rem;
+    margin-left: 6rem;
+    transform: rotate(-0.03turn);
 
     border: #db4439 2px solid;
     /* width: 75%; */
     /* background-color: #FFFFFF; */
     box-shadow: inset 0px 5px 30px 30px #db4439;
-    background-image: url('../images/pexels-vlad-chețan-2923156.jpg');
+    background-image: url('../images/pexels-mizuno-k-13801635.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 500px;
+    width: 80%;
+    height: 700px;
     padding: 10px;
     background-clip: padding-box;
   }
+
+
+
+
 
   @media screen and (min-width: 1450px){
     .hero-left, .hero-right{
@@ -67,23 +72,26 @@ html {
     }
     .faded{
         height: 900px;
-        margin-top: 3rem;
-        margin-left: 0rem;
+        /* margin-top: 3rem; */
+        margin-left:5rem;
     }
     .hero{
         padding:  0;
     }
     .hero-left h1{
         line-height: 13rem;
-        font-size: 15rem;
-        margin-bottom: 3rem;
+        font-size: 13rem;
+        margin-bottom: 4rem;
+        margin-top: -4rem;
+
 
     }
     .hero-left p{
         font-size: 3rem;
+        margin-bottom: 1rem;
     }
   }
-  @media screen and (min-width: 800px) and (max-width: 1450px){
+  @media screen and (min-width: 1000px) and (max-width: 1450px){
     .hero-left, .hero-right{
         width: 50%;
     }
@@ -105,3 +113,19 @@ html {
         font-size: 2rem;
     }
   }
+
+  @media screen and (max-width: 600px){
+    .faded{
+        margin-top: 2rem;
+        height: 500px;
+        margin-left: 2rem;
+    }
+  }
+  @media screen and (max-width: 400px){
+    .faded{
+        margin-top: 0rem;
+        height: 350px;
+    }
+  }
+
+
