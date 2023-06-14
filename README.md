@@ -7,10 +7,10 @@ View application at: https://job-finder-frontend.onrender.com/
 
 ## Learnings
 ##  meta and meta Open Graph (OG) data
-
 - Optimize posts by providing more control over how information travels from a third-party website to Facebook when a page is shared (or liked, etc.).
 - OGP tags are crucial because they allow you to control how your content appears when it’s shared on sites
 - The open graph tags let you control the title, description, and image in the post
+source: cloudinary.com for meta data image
 source: https://neilpatel.com/blog/open-graph-meta-tags/
 ### Mockaroo and ElephantSQL 
 Used these services to create data and deploy database
@@ -20,8 +20,18 @@ After completing the functionality of this project I chose to build out the desi
 
 
 ## Enhancements
-- Streamline color choices
-- Change color pallet
-- Refactor repetitive code
-- Remove "extra" code and files
-- Add Testing
+### Testing and Error Handling
+- Incorporate frontend testing
+- Create user-friendly messages for any errors
+- Incorporate backend testing
+
+### Styling and Features
+- Update color pallet
+- Incorporate company avatars
+- Add applied job list to profile
+
+### Refactor Code
+- Repetitive code
+- Create a Color Pallet to streamline future updates
+- Clean notes an remove unused code
+
