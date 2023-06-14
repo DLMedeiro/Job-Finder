@@ -42,12 +42,13 @@ html {
 }
 
 .faded {
+
     /* position: absolute;
     bottom: 0;
     right: 0; */
     margin-top: 2.5rem;
     margin-left: 6rem;
-    transform: rotate(-0.03turn);
+    transform: rotate(-0.02turn);
 
     border: #db4439 2px solid;
     /* width: 75%; */
@@ -123,7 +124,7 @@ html {
   }
   @media screen and (max-width: 400px){
     .faded{
-        margin-top: 0rem;
+        margin-top: 1rem;
         height: 350px;
     }
   }
